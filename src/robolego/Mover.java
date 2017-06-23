@@ -4,6 +4,8 @@ import lejos.nxt.Motor;
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.Sound;
 
+
+//class that handles the datastream and moves the robolego
 public class Mover {
 
 //	static int TIME = 900;
@@ -11,11 +13,9 @@ public class Mover {
 	static NXTRegulatedMotor MotorR = Motor.C;
 	static Music music = new Music();
 
-
+	//get the datastream from the android app and decipher it
 	public static void MoveBrick(int n){
-		
-//		long millis = System.currentTimeMillis();
-		
+			
 		MotorR.setAcceleration(1000);
 		MotorR.setSpeed(200);
 		MotorL.setAcceleration(1000);
@@ -83,6 +83,7 @@ public class Mover {
 		MotorL.stop(true);
 	}
 	
+	//play sound boom
 	public static void Boom(){	
 		music.musicPiano("G4", 800);
 		music.musicPiano("D4", 800);
@@ -92,30 +93,35 @@ public class Mover {
 		
 	}
 	
+	//play sound hp
 	public static void Powerup_HP(){
 		music.musicPiano("Ab3", 300);
 		music.musicPiano("B3", 300);
 		music.musicPiano("D4", 300);
 	}
 	
+	//play sound bomb
 	public static void Powerup_BOMB(){
 		music.musicPiano("G5", 300);
 		music.musicPiano("A3", 300);
 		music.musicPiano("D5", 300);
 	}
 	
+	//play sound godmode
 	public static void Powerup_GODMODE(){
 		music.musicPiano("A#4", 300);
 		music.musicPiano("Eb5", 300);
 		music.musicPiano("G#5", 300);
 	}
 	
+	//play sound confusion
 	public static void Powerup_CONFUSION(){
 		music.musicPiano("D#5", 300);
 		music.musicPiano("Eb3", 300);
 		music.musicPiano("F#3", 300);
 	}
 	
+	//play sound win
 	public static void Win(){
 		MotorR.setAcceleration(500);
 		MotorR.setSpeed(50);
@@ -127,12 +133,7 @@ public class Mover {
 		//playing 'we are the champions'
 		String[] melody1 = { "E4", "F4", "E4", 
 			      "C4", "500", "A3",  "D4"};
-		 
-//		 String[] melody2 = {"A5", 
-//			      "C5","A5", "D5", "1000", "D4", "E4", "D5","1000",
-//			      "D4","C4","200","D4","C","200","B3"};
-//		Music music = new Music();
-		
+
 		music.musicPiano("F4", 1000); //we.....
 		Sound.pause(300);
 		for (int i = 0; i < melody1.length; i++) {
@@ -145,10 +146,10 @@ public class Mover {
    	  		}
    
      	} 
-		music.musicPiano("A3", 1000);
+		music.musicPiano("A3", 1000); //"my friend...."
 		Sound.pause(600);
 		music.musicPiano("C4", 600);
-		music.musicPiano("F4", 1200); //and we'll...
+		music.musicPiano("F4", 1200); //"and we'll..."
 	}
 }  
  

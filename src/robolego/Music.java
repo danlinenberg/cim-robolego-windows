@@ -2,6 +2,7 @@ package robolego;
 
 import lejos.nxt.Sound;
 
+//class that helps us play music on the robolego much easier (instead of frequencies - notes)
 public class Music {
    private static String[] notes = { "C3", "C#3", "Db3", "D3", "D#3", "Eb3",
          "E3", "F3", "F#3", "Gb3", "G3", "G#3", "Ab3", "A3", "A#3", "Bb3",
